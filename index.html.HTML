@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Of Tech | Soluções em Tecnologia, Suporte e Gestão de TI</title>
+    <meta name="description" content="Suporte em TI, Microsoft 365, Nuvem, Infraestrutura, Presença Digital e Consultoria especializada para pessoas e empresas.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#080d1a',
+                            card: '#0f172a',
+                            cardLight: '#1e293b',
+                            blue: '#0284c7',
+                            cyan: '#00d2ff',
+                            orange: '#f97316',
+                            accent: '#38bdf8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #00d2ff 60%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-cyan selection:text-black">
+
+    <!-- HEADER / NAVEGAÇÃO -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- LOGO -->
+            <a href="#" onclick="switchTab('home')" class="flex items-center gap-3 group">
+                <div class="h-12 w-auto flex items-center justify-center rounded-xl p-1 bg-slate-900/80 border border-slate-700/60 shadow-lg shadow-sky-500/10 group-hover:border-brand-cyan transition">
+                    <img src="logo.png" 
+                         alt="City Of Tech Logo" 
+                         class="h-10 w-auto object-contain rounded-lg"
+                         onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/d/U5f2bniEyqJk4GycI=w500';">
+                </div>
+                <div class="hidden sm:block">
+                    <span class="text-xl font-black tracking-wider text-white">CITY OF <span class="text-brand-cyan">TECH</span></span>
+                    <p class="text-[10px] text-slate-400 -mt-1 tracking-widest uppercase">Soluções em TI</p>
+                </div>
+            </a>
+
+            <!-- MENU DESKTOP -->
+            <nav class="hidden md:flex items-center gap-1 bg-slate-900/80 p-1.5 rounded-full border border-slate-800">
+                <button onclick="switchTab('home')" id="nav-home" class="nav-btn px-5 py-2 rounded-full text-sm font-medium transition-all text-white bg-brand-blue/30 border border-brand-cyan/40">Home</button>
+                <button onclick="switchTab('servicos')" id="nav-servicos" class="nav-btn px-5 py-2 rounded-full text-sm font-medium transition-all text-slate-400 hover:text-white">Serviços</button>
+                <button onclick="switchTab('sobre')" id="nav-sobre" class="nav-btn px-5 py-2 rounded-full text-sm font-medium transition-all text-slate-400 hover:text-white">Sobre Daniel</button>
+                <button onclick="switchTab('contato')" id="nav-contato" class="nav-btn px-5 py-2 rounded-full text-sm font-medium transition-all text-slate-400 hover:text-white">Contato</button>
+            </nav>
+
+            <!-- CTA WHATSAPP -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20City%20Of%20Tech" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 text-slate-950 font-bold text-sm hover:shadow-lg hover:shadow-cyan-500/25 transition duration-300 transform hover:-translate-y-0.5">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    Falar no WhatsApp
+                </a>
+            </div>
+
+            <!-- MENU MOBILE TOGGLE -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-slate-300 hover:text-white p-2" aria-label="Abrir Menu">
+                <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- MENU MOBILE DROPDOWN -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark/98 border-b border-slate-800 px-4 py-4 space-y-2">
+            <button onclick="switchTab('home'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-slate-200 hover:bg-slate-800 flex items-center gap-3">
+                <i data-lucide="home" class="w-4 h-4 text-brand-cyan"></i> Home
+            </button>
+            <button onclick="switchTab('servicos'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-slate-200 hover:bg-slate-800 flex items-center gap-3">
+                <i data-lucide="cpu" class="w-4 h-4 text-brand-cyan"></i> Serviços
+            </button>
+            <button onclick="switchTab('sobre'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-slate-200 hover:bg-slate-800 flex items-center gap-3">
+                <i data-lucide="user" class="w-4 h-4 text-brand-cyan"></i> Sobre Daniel
+            </button>
+            <button onclick="switchTab('contato'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-slate-200 hover:bg-slate-800 flex items-center gap-3">
+                <i data-lucide="mail" class="w-4 h-4 text-brand-cyan"></i> Contato
+            </button>
+            <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20City%20Of%20Tech" target="_blank" class="w-full text-center block px-4 py-3 rounded-lg bg-gradient-to-r from-sky-500 to-cyan-500 text-slate-950 font-bold">
+                Chamar no WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-24 min-h-screen">
+        
+        <!-- ========================================================================= -->
+        <!-- 1. TAB: HOME -->
+        <!-- ========================================================================= -->
+        <section id="tab-home" class="tab-content active">
+            
+            <!-- HERO -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 lg:pt-20">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-brand-cyan text-xs font-semibold tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
+                            +10 ANOS DE EXPERIÊNCIA EM TI CORPORATIVA
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                            Tecnologia sem complicação para você focar no que <span class="gradient-text">realmente importa</span>.
+                        </h1>
+                        <p class="text-lg text-slate-400 max-w-2xl leading-relaxed">
+                            Quando o computador para, o e-mail não chega ou a rede cai, seu negócio não pode esperar. A City Of Tech oferece suporte técnico ágil, gestão de TI, nuvem e soluções sob medida para pessoas e empresas.
+                        </p>
+                        <div class="flex flex-wrap items-center gap-4 pt-4">
+                            <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20City%20Of%20Tech" target="_blank" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 text-slate-950 font-bold text-base hover:shadow-lg hover:shadow-cyan-500/25 transition duration-300 flex items-center gap-2">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i> Iniciar Atendimento
+                            </a>
+                            <button onclick="switchTab('servicos')" class="px-7 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-white font-semibold text-base border border-slate-700 transition duration-300">
+                                Ver Todos os Serviços
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- CARD DE DESTAQUE HERO -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-gradient-to-b from-slate-800/90 to-slate-900/90 p-8 rounded-3xl border border-slate-700/80 shadow-2xl relative overflow-hidden">
+                            <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-brand-cyan"></i>
+                                Por que a City Of Tech?
+                            </h3>
+
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-4 p-3.5 rounded-xl bg-slate-900/70 border border-slate-800">
+                                    <div class="p-2 rounded-lg bg-sky-500/10 text-brand-cyan"><i data-lucide="ear" class="w-5 h-5"></i></div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-slate-200">Entendemos antes de propor</h4>
+                                        <p class="text-xs text-slate-400 mt-0.5">Diagnóstico preciso para resolver a causa real do problema.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4 p-3.5 rounded-xl bg-slate-900/70 border border-slate-800">
+                                    <div class="p-2 rounded-lg bg-sky-500/10 text-brand-cyan"><i data-lucide="building" class="w-5 h-5"></i></div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-slate-200">Bagagem de grandes empresas</h4>
+                                        <p class="text-xs text-slate-400 mt-0.5">Metodologias aplicadas em ambientes como Claranet e Fujitsu.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4 p-3.5 rounded-xl bg-slate-900/70 border border-slate-800">
+                                    <div class="p-2 rounded-lg bg-sky-500/10 text-brand-cyan"><i data-lucide="gamepad-2" class="w-5 h-5"></i></div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-slate-200">Do B2B ao Universo Gamer</h4>
+                                        <p class="text-xs text-slate-400 mt-0.5">Consultoria de hardware, PCs de alta performance e setups.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NOSSOS PRINCIPAIS PILARES -->
+            <div class="bg-slate-900/40 border-y border-slate-800 py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <h2 class="text-3xl font-bold text-white">Soluções Rápidas e Estratégicas</h2>
+                        <p class="text-slate-400 text-sm mt-2">Atendimentos pontuais sob demanda ou contratos mensais de gestão de TI.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- Card 1 -->
+                        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition">
+                            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-brand-cyan flex items-center justify-center mb-5">
+                                <i data-lucide="server" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">TI & Suporte Corporativo</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">Gestão completa de computadores, Microsoft 365, e-mails institucionais, backup e servidores em nuvem.</p>
+                            <button onclick="switchTab('servicos')" class="text-brand-cyan text-sm font-semibold flex items-center gap-1 hover:underline">Saiba mais <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition">
+                            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-brand-cyan flex items-center justify-center mb-5">
+                                <i data-lucide="globe" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Presença Digital & Sites</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">Criação de sites modernos, configuração de domínio, DNS, e-mails profissionais e Google Perfil de Empresa.</p>
+                            <button onclick="switchTab('servicos')" class="text-brand-cyan text-sm font-semibold flex items-center gap-1 hover:underline">Saiba mais <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition">
+                            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-brand-cyan flex items-center justify-center mb-5">
+                                <i data-lucide="monitor" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Consultoria de Hardware & Gamer</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">Montagem e otimização de PC Gamer e estações de trabalho de alto desempenho com quem entende a fundo.</p>
+                            <button onclick="switchTab('servicos')" class="text-brand-cyan text-sm font-semibold flex items-center gap-1 hover:underline">Saiba mais <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA SECTION -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="rounded-3xl bg-gradient-to-r from-blue-900/40 via-slate-900 to-sky-950/40 border border-sky-500/30 p-8 sm:p-12 text-center relative overflow-hidden">
+                    <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">Tem um desafio técnico ou precisa de suporte?</h2>
+                    <p class="text-slate-300 max-w-2xl mx-auto mb-8 text-sm sm:text-base">
+                        Não deixe um problema de TI interromper o seu dia ou travar a sua empresa. Converse diretamente no WhatsApp.
+                    </p>
+                    <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20City%20Of%20Tech" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 text-slate-950 font-extrabold text-base hover:shadow-xl hover:shadow-cyan-500/30 transition">
+                        <i data-lucide="message-square" class="w-5 h-5"></i> Solicitar Atendimento Agora
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. TAB: SERVIÇOS -->
+        <!-- ========================================================================= -->
+        <section id="tab-servicos" class="tab-content">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-cyan font-bold tracking-widest text-xs uppercase">Catálogo de Serviços</span>
+                    <h2 class="text-4xl font-extrabold text-white mt-2">Soluções Completas em Tecnologia</h2>
+                    <p class="text-slate-400 mt-4 text-base">Atendemos tanto demandas pontuais sob demanda quanto contratos recorrentes de gestão contínua de TI.</p>
+                </div>
+
+                <!-- CATEGORIA 1: TI EMPRESARIAL -->
+                <div class="mb-16">
+                    <div class="flex items-center gap-3 mb-8 border-b border-slate-800 pb-4">
+                        <div class="p-2.5 rounded-lg bg-sky-500/10 text-brand-cyan"><i data-lucide="building-2" class="w-6 h-6"></i></div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">TI para Empresas & Gestão Corporativa</h3>
+                            <p class="text-xs text-slate-400">Infraestrutura, rotinas de segurança e suporte para o seu negócio não parar</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+                            <div class="text-brand-cyan mb-4"><i data-lucide="wrench" class="w-7 h-7"></i></div>
+                            <h4 class="text-lg font-bold text-white mb-2">TI para Empresas e Suporte</h4>
+                            <p class="text-sm text-slate-400">Helpdesk rápido, manutenção preventiva e corretiva para manter computadores e sistemas sempre operacionais.</p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+                            <div class="text-brand-cyan mb-4"><i data-lucide="mail-check" class="w-7 h-7"></i></div>
+                            <h4 class="text-lg font-bold text-white mb-2">E-mail Corporativo & Microsoft 365</h4>
+                            <p class="text-sm text-slate-400">Implementação, migração e suporte para Outlook, Exchange, Teams, SharePoint e licenciamento Microsoft 365.</p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+                            <div class="text-brand-cyan mb-4"><i data-lucide="cloud" class="w-7 h-7"></i></div>
+                            <h4 class="text-lg font-bold text-white mb-2">Nuvem, Backup & Compartilhamento</h4>
+                            <p class="text-sm text-slate-400">Rotinas de backup automatizadas, recuperação contra perdas de dados e servidores de arquivos em nuvem segura.</p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition lg:col-span-3">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                <div class="space-y-1">
+                                    <div class="inline-block px-2.5 py-0.5 rounded bg-sky-500/20 text-brand-cyan text-xs font-bold uppercase mb-2">Plano Contínuo</div>
+                                    <h4 class="text-xl font-bold text-white">🔄 Gestão de TI & Atendimento Recorrente</h4>
+                                    <p class="text-sm text-slate-400 max-w-3xl">Tenha um departamento de TI dedicado à sua empresa com suporte proativo, monitoramento e consultoria estratégica regular.</p>
+                                </div>
+                                <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel,%20gostaria%20de%20consultar%20os%20planos%20mensais%20de%20Gest%C3%A3o%20de%20TI" target="_blank" class="px-6 py-3 rounded-xl bg-slate-800 text-brand-cyan hover:bg-slate-700 font-semibold text-sm border border-slate-700 whitespace-nowrap inline-flex items-center gap-2 justify-center">
+                                    <i data-lucide="message-square" class="w-4 h-4"></i> Consultar Planos Mensais
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORIA 2: PRESENÇA DIGITAL -->
+                <div class="mb-16">
+                    <div class="flex items-center gap-3 mb-8 border-b border-slate-800 pb-4">
+                        <div class="p-2.5 rounded-lg bg-sky-500/10 text-brand-cyan"><i data-lucide="globe-2" class="w-6 h-6"></i></div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Presença Digital, Sites & Visibilidade</h3>
+                            <p class="text-xs text-slate-400">Garanta a identidade e autoridade da sua marca na internet</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+                            <div class="text-brand-cyan mb-4"><i data-lucide="network" class="w-7 h-7"></i></div>
+                            <h4 class="text-lg font-bold text-white mb-2">Domínios, DNS e Hospedagem</h4>
+                            <p class="text-sm text-slate-400">Registro de domínios (.com.br, .com), apontamentos de DNS (SPF, DKIM, DMARC) e configuração de servidores rápidos.</p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+                            <div class="text-brand-cyan mb-4"><i data-lucide="layout" class="w-7 h-7"></i></div>
+                            <h4 class="text-lg font-bold text-white mb-2">Sites & Páginas Profissionais</h4>
+                            <p class="text-sm text-slate-400">Criação de sites modernos, páginas de vendas (landing pages) e portais institucionais rápidos e otimizados para celular.</p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+                            <div class="text-brand-cyan mb-4"><i data-lucide="map-pin" class="w-7 h-7"></i></div>
+                            <h4 class="text-lg font-bold text-white mb-2">Google Perfil de Empresas</h4>
+                            <p class="text-sm text-slate-400">Otimização completa no Google Maps para que clientes da sua região encontrem o seu negócio facilmente na busca.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORIA 3: HARDWARE, WINDOWS & GAMER -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8 border-b border-slate-800 pb-4">
+                        <div class="p-2.5 rounded-lg bg-sky-500/10 text-brand-cyan"><i data-lucide="cpu" class="w-6 h-6"></i></div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Computadores, Hardware & Consultoria Gamer</h3>
+                            <p class="text-xs text-slate-400">Cuidado especializado em cada componente, do uso corporativo aos games mais exigentes</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+                            <div class="text-brand-cyan mb-4"><i data-lucide="monitor-smartphone" class="w-7 h-7"></i></div>
+                            <h4 class="text-lg font-bold text-white mb-2">Windows, Office & Máquinas</h4>
+                            <p class="text-sm text-slate-400">Formatação, otimização de velocidade, remoção de vírus/malwares, instalação limpa de sistemas e suíte Office.</p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+                            <div class="text-brand-cyan mb-4"><i data-lucide="gamepad" class="w-7 h-7"></i></div>
+                            <h4 class="text-lg font-bold text-white mb-2">PC Gamer & Hardware Especializado</h4>
+                            <p class="text-sm text-slate-400">Consultoria para escolha de peças com melhor custo-benefício, montagem profissional e upgrades de desempenho.</p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+                            <div class="text-brand-cyan mb-4"><i data-lucide="user-check" class="w-7 h-7"></i></div>
+                            <h4 class="text-lg font-bold text-white mb-2">Serviços Avulsos (PF / MEI)</h4>
+                            <p class="text-sm text-slate-400">Precisa resolver um problema rápido e pontual? Atendimento flexível, presencial ou remoto com cobrança justa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. TAB: SOBRE -->
+        <!-- ========================================================================= -->
+        <section id="tab-sobre" class="tab-content">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="grid md:grid-cols-12 gap-10 items-start">
+                    
+                    <!-- PERFIL LATERAL -->
+                    <div class="md:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 text-center sticky top-28">
+                        <div class="w-40 h-40 mx-auto rounded-2xl bg-[#080e1d] border-2 border-brand-cyan/40 p-2 mb-4 shadow-xl flex items-center justify-center overflow-hidden">
+                            <img src="logo.png" 
+                                 alt="City Of Tech Logo" 
+                                 class="w-full h-full object-contain"
+                                 onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/d/U5f2bniEyqJk4GycI=w500';">
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Daniel Gomes</h3>
+                        <p class="text-brand-cyan text-sm font-medium">Fundador da City Of Tech</p>
+                        <p class="text-xs text-slate-400 mt-1">Gestão da Tecnologia da Informação</p>
+
+                        <!-- LINKS SOCIAIS DO DANIEL -->
+                        <div class="mt-6 pt-6 border-t border-slate-800 space-y-2 text-left">
+                            <a href="https://www.linkedin.com/in/daniel-gomes-25a767b5/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-xs text-slate-300 hover:text-white transition">
+                                <i data-lucide="linkedin" class="w-4 h-4 text-sky-400"></i>
+                                LinkedIn Pessoal (Daniel Gomes)
+                            </a>
+                            <a href="https://www.linkedin.com/company/110355184/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-xs text-slate-300 hover:text-white transition">
+                                <i data-lucide="building-2" class="w-4 h-4 text-brand-cyan"></i>
+                                LinkedIn City Of Tech
+                            </a>
+                            <a href="https://www.instagram.com/city.oftech/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-xs text-slate-300 hover:text-white transition">
+                                <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i>
+                                Instagram (@city.oftech)
+                            </a>
+                            <a href="https://www.youtube.com/@CityOfTech10" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-xs text-slate-300 hover:text-white transition">
+                                <i data-lucide="youtube" class="w-4 h-4 text-red-500"></i>
+                                YouTube (@CityOfTech10)
+                            </a>
+                            <a href="mailto:cityoftech100@gmail.com" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-xs text-slate-300 hover:text-white transition">
+                                <i data-lucide="mail" class="w-4 h-4 text-brand-cyan"></i>
+                                cityoftech100@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- TEXTO COMPLETO DA HISTÓRIA -->
+                    <div class="md:col-span-7 space-y-6 text-slate-300 leading-relaxed text-base">
+                        <span class="text-brand-cyan font-bold tracking-widest text-xs uppercase">Quem está por trás</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Prazer, eu sou Daniel Gomes.
+                        </h2>
+
+                        <p>
+                            Sou profissional de Tecnologia da Informação, formado em <strong>Gestão da Tecnologia da Informação</strong> e com uma trajetória de <strong>mais de 10 anos</strong> atuando diretamente na área de TI — incluindo experiências profundas em ambientes corporativos de grandes referências como <strong>Claranet</strong> e <strong>Fujitsu</strong>.
+                        </p>
+
+                        <div class="p-5 rounded-2xl bg-sky-950/20 border-l-4 border-brand-cyan my-4">
+                            <p class="text-slate-200 italic text-sm">
+                                "Ao longo desses anos, aprendi algo fundamental: quando um computador para, um e-mail deixa de chegar ou a rede falha, existe uma pessoa — e frequentemente uma empresa inteira — dependendo daquela solução."
+                            </p>
+                        </div>
+
+                        <p>
+                            Foi essa visão que moldou minha forma de trabalhar. Tenho sólido conhecimento em ambientes Windows, suporte corporativo avançado, Microsoft 365, e-mails corporativos, domínios, DNS, infraestrutura e nas mais diversas demandas tecnológicas do cotidiano de negócios e pessoas.
+                        </p>
+
+                        <h3 class="text-xl font-bold text-white pt-2">Ouvir antes de propor soluções</h3>
+                        <p>
+                            Não acredito em indicar ferramentas antes de <strong>compreender com clareza o problema</strong>. O trabalho começa ouvindo e analisando. Afinal, o cliente sabe o que não está funcionando, mas ele <em>não precisa — e nem deveria precisar — saber qual tecnologia complexa está por trás da solução</em>.
+                        </p>
+
+                        <p>
+                            A <strong>City Of Tech</strong> nasceu exatamente com essa missão: tornar a tecnologia acessível, agir com responsabilidade técnica e transformar problemas frustrantes em caminhos simples e resolutivos.
+                        </p>
+
+                        <h3 class="text-xl font-bold text-white pt-2">Presença no YouTube e Universo Gamer</h3>
+                        <p>
+                            Minha paixão por tecnologia vai além do corporativo. Compartilho testes, otimizações, hardware e novidades diretamente no canal <strong>City Of Tech no YouTube</strong>, conectando o mundo dos computadores de alto desempenho ao público de forma transparente.
+                        </p>
+
+                        <p class="font-semibold text-slate-100">
+                            No final, existe uma característica que define toda a minha trajetória: <span class="text-brand-cyan">eu gosto de entender como as coisas funcionam — e, principalmente, de encontrar a solução definitiva quando elas deixam de funcionar.</span>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. TAB: CONTATO -->
+        <!-- ========================================================================= -->
+        <section id="tab-contato" class="tab-content">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-brand-cyan font-bold tracking-widest text-xs uppercase">Fale Conosco</span>
+                    <h2 class="text-4xl font-extrabold text-white mt-2">Vamos Resolver o Seu Desafio?</h2>
+                    <p class="text-slate-400 mt-3 text-sm">Chame diretamente no WhatsApp ou envie suas informações abaixo.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-10">
+                    
+                    <!-- DETALHES DE CONTATO / CANAIS -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
+                            <h3 class="text-xl font-bold text-white mb-2">Canais Diretos</h3>
+                            
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20City%20Of%20Tech" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/50 transition group">
+                                <div class="p-3 rounded-lg bg-emerald-500/10 text-emerald-400 group-hover:scale-110 transition">
+                                    <i data-lucide="phone-call" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400">WhatsApp Direto</div>
+                                    <div class="text-base font-bold text-white">(11) 95492-2131</div>
+                                </div>
+                            </a>
+
+                            <!-- E-mail -->
+                            <a href="mailto:cityoftech100@gmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700 hover:border-brand-cyan/50 transition group">
+                                <div class="p-3 rounded-lg bg-sky-500/10 text-brand-cyan group-hover:scale-110 transition">
+                                    <i data-lucide="mail" class="w-6 h-6"></i>
+                                </div>
+                                <div class="overflow-hidden">
+                                    <div class="text-xs text-slate-400">E-mail Profissional</div>
+                                    <div class="text-sm sm:text-base font-bold text-white truncate">cityoftech100@gmail.com</div>
+                                </div>
+                            </a>
+
+                            <!-- Horário -->
+                            <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/60 border border-slate-700">
+                                <div class="p-3 rounded-lg bg-sky-500/10 text-brand-cyan">
+                                    <i data-lucide="clock" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400">Horário de Suporte</div>
+                                    <div class="text-base font-bold text-white">Segunda a Sexta: 08h às 18h</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- REDES SOCIAIS -->
+                        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
+                            <h4 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-2">Redes Sociais & Canais</h4>
+                            <div class="grid grid-cols-2 gap-3">
+                                <a href="https://www.instagram.com/city.oftech/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-3 rounded-xl bg-slate-800/50 hover:bg-slate-800 text-xs text-slate-300 hover:text-white border border-slate-700/50 hover:border-pink-500/40 transition">
+                                    <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i> @city.oftech
+                                </a>
+                                <a href="https://www.youtube.com/@CityOfTech10" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-3 rounded-xl bg-slate-800/50 hover:bg-slate-800 text-xs text-slate-300 hover:text-white border border-slate-700/50 hover:border-red-500/40 transition">
+                                    <i data-lucide="youtube" class="w-4 h-4 text-red-500"></i> @CityOfTech10
+                                </a>
+                                <a href="https://www.linkedin.com/company/110355184/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-3 rounded-xl bg-slate-800/50 hover:bg-slate-800 text-xs text-slate-300 hover:text-white border border-slate-700/50 hover:border-sky-500/40 transition">
+                                    <i data-lucide="linkedin" class="w-4 h-4 text-sky-400"></i> LinkedIn C.O.T
+                                </a>
+                                <a href="https://www.linkedin.com/in/daniel-gomes-25a767b5/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-3 rounded-xl bg-slate-800/50 hover:bg-slate-800 text-xs text-slate-300 hover:text-white border border-slate-700/50 hover:border-sky-500/40 transition">
+                                    <i data-lucide="user" class="w-4 h-4 text-sky-400"></i> Daniel Gomes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FORMULÁRIO -->
+                    <div class="lg:col-span-7 bg-slate-900 p-8 rounded-3xl border border-slate-800">
+                        <h3 class="text-xl font-bold text-white mb-2">Envie uma Solicitação</h3>
+                        <p class="text-xs text-slate-400 mb-6">Preencha os campos abaixo para abrir um contato já formatado no WhatsApp.</p>
+                        
+                        <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Seu Nome / Empresa *</label>
+                                    <input type="text" id="form-nome" required placeholder="Ex: Daniel Souza" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-brand-cyan text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">WhatsApp / Telefone *</label>
+                                    <input type="tel" id="form-tel" required placeholder="(11) 99999-9999" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-brand-cyan text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Qual serviço você procura?</label>
+                                <select id="form-servico" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-brand-cyan text-sm">
+                                    <option>TI para Empresas & Suporte Recorrente</option>
+                                    <option>E-mail Corporativo & Microsoft 365</option>
+                                    <option>Domínios, Hospedagem e DNS</option>
+                                    <option>Criação de Site & Google Meu Negócio</option>
+                                    <option>Nuvem e Backup de Arquivos</option>
+                                    <option>Consultoria / Montagem de PC Gamer</option>
+                                    <option>Manutenção de Computador (Avulso PF/MEI)</option>
+                                    <option>Outros assuntos</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Descreva brevemente sua necessidade *</label>
+                                <textarea id="form-msg" rows="4" required placeholder="Explique o que está acontecendo ou o que você gostaria de estruturar..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-brand-cyan text-sm"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 text-slate-950 font-bold text-base hover:shadow-lg hover:shadow-cyan-500/25 transition flex items-center justify-center gap-2">
+                                <i data-lucide="send" class="w-5 h-5"></i> Enviar Mensagem via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800/80 bg-slate-950 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="h-10 w-auto flex items-center justify-center rounded-lg p-1 bg-slate-900 border border-slate-700">
+                    <img src="logo.png" alt="City Of Tech" class="h-8 w-auto object-contain" onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/d/U5f2bniEyqJk4GycI=w500';">
+                </div>
+                <div>
+                    <span class="font-bold text-white text-base tracking-wider">CITY OF <span class="text-brand-cyan">TECH</span></span>
+                    <p class="text-xs text-slate-500">Transformando problemas técnicos em soluções simples com responsabilidade.</p>
+                </div>
+            </div>
+
+            <!-- ÍCONES FOOTER -->
+            <div class="flex items-center gap-4 text-slate-400">
+                <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20City%20Of%20Tech" target="_blank" class="hover:text-emerald-400 transition" title="WhatsApp"><i data-lucide="phone" class="w-5 h-5"></i></a>
+                <a href="mailto:cityoftech100@gmail.com" class="hover:text-brand-cyan transition" title="E-mail"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                <a href="https://www.instagram.com/city.oftech/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition" title="Instagram @city.oftech"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                <a href="https://www.youtube.com/@CityOfTech10" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition" title="YouTube @CityOfTech10"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                <a href="https://www.linkedin.com/company/110355184/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition" title="LinkedIn Empresa"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                <a href="https://www.linkedin.com/in/daniel-gomes-25a767b5/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition" title="LinkedIn Daniel"><i data-lucide="user" class="w-5 h-5"></i></a>
+            </div>
+
+            <div class="text-xs text-slate-500">
+                &copy; <span id="current-year"></span> City Of Tech — Fundado por Daniel Gomes.
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIC SCRIPT (TAB NAVIGATION & ICONS) -->
+    <script>
+        // Inicializa ícones Lucide
+        lucide.createIcons();
+
+        // Ano dinâmico no footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Troca de Abas
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.className = 'nav-btn px-5 py-2 rounded-full text-sm font-medium transition-all text-slate-400 hover:text-white';
+            });
+
+            const targetTab = document.getElementById('tab-' + tabId);
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
+
+            const activeBtn = document.getElementById('nav-' + tabId);
+            if (activeBtn) {
+                activeBtn.className = 'nav-btn px-5 py-2 rounded-full text-sm font-medium transition-all text-white bg-brand-blue/30 border border-brand-cyan/40';
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Toggle Menu Mobile
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Envio do formulário formatado direto para o WhatsApp
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const nome = document.getElementById('form-nome').value;
+            const tel = document.getElementById('form-tel').value;
+            const servico = document.getElementById('form-servico').value;
+            const msg = document.getElementById('form-msg').value;
+
+            const textoFormatado = `Olá Daniel! Vim pelo site da City Of Tech.%0A%0A*Nome:* ${encodeURIComponent(nome)}%0A*Telefone:* ${encodeURIComponent(tel)}%0A*Interesse:* ${encodeURIComponent(servico)}%0A*Mensagem:* ${encodeURIComponent(msg)}`;
+            
+            const linkWhatsapp = `https://wa.me/5511954922131?text=${textoFormatado}`;
+            window.open(linkWhatsapp, '_blank');
+        }
+    </script>
+</body>
+</html>
