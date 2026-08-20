@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Of Tech | Montando ideias, conectando soluções!</title>
+    <title>City Of Tech | Soluções em Tecnologia, Suporte e Gestão de TI</title>
     <meta name="description" content="Suporte em TI, Microsoft 365, Nuvem, Infraestrutura, Presença Digital e Consultoria especializada para pessoas e empresas.">
     
     <!-- Tailwind CSS CDN -->
@@ -171,7 +171,7 @@
                 </div>
             </div>
 
-            <!-- NOSSOS PRINCIPAIS PILARES -->
+            <!-- PILARES -->
             <div class="bg-slate-900/40 border-y border-slate-800 py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center max-w-2xl mx-auto mb-12">
@@ -180,7 +180,6 @@
                     </div>
 
                     <div class="grid md:grid-cols-3 gap-6">
-                        <!-- Card 1 -->
                         <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition">
                             <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-brand-cyan flex items-center justify-center mb-5">
                                 <i data-lucide="server" class="w-6 h-6"></i>
@@ -190,7 +189,6 @@
                             <button onclick="switchTab('servicos')" class="text-brand-cyan text-sm font-semibold flex items-center gap-1 hover:underline">Saiba mais <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
                         </div>
 
-                        <!-- Card 2 -->
                         <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition">
                             <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-brand-cyan flex items-center justify-center mb-5">
                                 <i data-lucide="globe" class="w-6 h-6"></i>
@@ -200,7 +198,6 @@
                             <button onclick="switchTab('servicos')" class="text-brand-cyan text-sm font-semibold flex items-center gap-1 hover:underline">Saiba mais <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
                         </div>
 
-                        <!-- Card 3 -->
                         <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition">
                             <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-brand-cyan flex items-center justify-center mb-5">
                                 <i data-lucide="monitor" class="w-6 h-6"></i>
@@ -238,7 +235,7 @@
                     <p class="text-slate-400 mt-4 text-base">Atendemos tanto demandas pontuais sob demanda quanto contratos recorrentes de gestão contínua de TI.</p>
                 </div>
 
-                <!-- CATEGORIA 1: TI EMPRESARIAL -->
+                <!-- CATEGORIA 1 -->
                 <div class="mb-16">
                     <div class="flex items-center gap-3 mb-8 border-b border-slate-800 pb-4">
                         <div class="p-2.5 rounded-lg bg-sky-500/10 text-brand-cyan"><i data-lucide="building-2" class="w-6 h-6"></i></div>
@@ -282,7 +279,7 @@
                     </div>
                 </div>
 
-                <!-- CATEGORIA 2: PRESENÇA DIGITAL -->
+                <!-- CATEGORIA 2 -->
                 <div class="mb-16">
                     <div class="flex items-center gap-3 mb-8 border-b border-slate-800 pb-4">
                         <div class="p-2.5 rounded-lg bg-sky-500/10 text-brand-cyan"><i data-lucide="globe-2" class="w-6 h-6"></i></div>
@@ -313,7 +310,7 @@
                     </div>
                 </div>
 
-                <!-- CATEGORIA 3: HARDWARE, WINDOWS & GAMER -->
+                <!-- CATEGORIA 3 -->
                 <div>
                     <div class="flex items-center gap-3 mb-8 border-b border-slate-800 pb-4">
                         <div class="p-2.5 rounded-lg bg-sky-500/10 text-brand-cyan"><i data-lucide="cpu" class="w-6 h-6"></i></div>
@@ -347,26 +344,35 @@
         </section>
 
         <!-- ========================================================================= -->
-        <!-- 3. TAB: SOBRE -->
+        <!-- 3. TAB: SOBRE DANIEL (COM FOTO E CARD RETRÁTIL NO MOBILE) -->
         <!-- ========================================================================= -->
         <section id="tab-sobre" class="tab-content">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div class="grid md:grid-cols-12 gap-10 items-start">
+                <div class="grid md:grid-cols-12 gap-8 lg:gap-10 items-start">
                     
-                    <!-- PERFIL LATERAL -->
-                    <div class="md:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 text-center sticky top-28">
-                        <div class="w-40 h-40 mx-auto rounded-2xl bg-[#080e1d] border-2 border-brand-cyan/40 p-2 mb-4 shadow-xl flex items-center justify-center overflow-hidden">
-                            <img src="logo.png" 
-                                 alt="City Of Tech Logo" 
-                                 class="w-full h-full object-contain"
-                                 onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/d/U5f2bniEyqJk4GycI=w500';">
+                    <!-- PERFIL LATERAL (COM FOTO REAL E CONTROLE DE RECOLHER NO MOBILE) -->
+                    <div class="md:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 text-center md:sticky md:top-28 shadow-2xl transition-all duration-300">
+                        
+                        <!-- FOTO DO DANIEL -->
+                        <div class="w-36 h-36 sm:w-44 sm:h-44 mx-auto rounded-3xl bg-gradient-to-tr from-sky-500 to-cyan-500 p-1 mb-4 shadow-xl shadow-sky-500/10 overflow-hidden">
+                            <img src="daniel.jpg" 
+                                 alt="Daniel Gomes - Fundador da City Of Tech" 
+                                 class="w-full h-full object-cover object-top rounded-[22px]"
+                                 onerror="this.onerror=null; this.src='logo.png';">
                         </div>
+
                         <h3 class="text-2xl font-bold text-white">Daniel Gomes</h3>
                         <p class="text-brand-cyan text-sm font-medium">Fundador da City Of Tech</p>
                         <p class="text-xs text-slate-400 mt-1">Gestão da Tecnologia da Informação</p>
 
-                        <!-- LINKS SOCIAIS DO DANIEL -->
-                        <div class="mt-6 pt-6 border-t border-slate-800 space-y-2 text-left">
+                        <!-- BOTÃO TOGGLE DE SETA (EXCLUSIVO PARA CELULAR) -->
+                        <button onclick="toggleProfileCard()" class="md:hidden w-full mt-4 py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-brand-cyan flex items-center justify-between border border-slate-700 transition">
+                            <span id="profile-toggle-text">Ocultar redes e contatos</span>
+                            <i data-lucide="chevron-up" id="profile-toggle-icon" class="w-4 h-4 transition-transform duration-300"></i>
+                        </button>
+
+                        <!-- ÁREA DE LINKS DO CARD (PODE SER RECOLHIDA NO CELULAR) -->
+                        <div id="profile-collapsible-content" class="mt-5 pt-5 border-t border-slate-800 space-y-2 text-left block">
                             <a href="https://www.linkedin.com/in/daniel-gomes-25a767b5/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-xs text-slate-300 hover:text-white transition">
                                 <i data-lucide="linkedin" class="w-4 h-4 text-sky-400"></i>
                                 LinkedIn Pessoal (Daniel Gomes)
@@ -583,7 +589,7 @@
         </div>
     </footer>
 
-    <!-- LOGIC SCRIPT (TAB NAVIGATION & ICONS) -->
+    <!-- LOGIC SCRIPT -->
     <script>
         // Inicializa ícones Lucide
         lucide.createIcons();
@@ -614,10 +620,26 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Toggle Menu Mobile
+        // Toggle Menu Mobile da Barra de Navegação
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
+        }
+
+        // Toggle do Card do Daniel no Mobile (Seta para fechar/abrir)
+        function toggleProfileCard() {
+            const content = document.getElementById('profile-collapsible-content');
+            const icon = document.getElementById('profile-toggle-icon');
+            const text = document.getElementById('profile-toggle-text');
+            
+            content.classList.toggle('hidden');
+            if (content.classList.contains('hidden')) {
+                icon.classList.add('rotate-180');
+                text.textContent = 'Ver redes e contatos do Daniel';
+            } else {
+                icon.classList.remove('rotate-180');
+                text.textContent = 'Ocultar redes e contatos';
+            }
         }
 
         // Envio do formulário formatado direto para o WhatsApp
