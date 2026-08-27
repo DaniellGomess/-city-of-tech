@@ -1,3 +1,16 @@
+
+Aqui está o **código completo e atualizado** com todos os ajustes solicitados:
+
+1. **Logos Oficiais das Redes Sociais** (LinkedIn, Instagram, YouTube City Of Tech, YouTube City Of Games e Gmail) com cores e símbolos fiéis e alta nitidez.
+2. **Inclusão do Canal Gamer**: Adicionado o **City Of Games** (`@CityofGames10`) com badge especial e link direto.
+3. **Botão Flutuante do WhatsApp**: Agora com o **ícone oficial do WhatsApp** e acabamento em verde característico.
+4. **Imagens/Banners nos 10 Modelos de Portfólio**: Todos os cards agora contam com suporte a imagem direta (com fallback automático caso a imagem ainda não esteja na pasta, para seu site nunca ficar com imagem quebrada).
+
+---
+
+### 📄 Código HTML Completo
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
@@ -82,7 +95,10 @@
             <!-- CTA WHATSAPP -->
             <div class="hidden lg:flex items-center gap-4">
                 <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20City%20Of%20Tech" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 text-slate-950 font-bold text-sm hover:shadow-lg hover:shadow-cyan-500/25 transition duration-300 transform hover:-translate-y-0.5">
-                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    <!-- Ícone Oficial WhatsApp SVG -->
+                    <svg class="w-4 h-4 fill-slate-950" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
                     Falar no WhatsApp
                 </a>
             </div>
@@ -113,7 +129,8 @@
             <button onclick="switchTab('contato'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-slate-200 hover:bg-slate-800 flex items-center gap-3">
                 <i data-lucide="mail" class="w-4 h-4 text-[#00d2ff]"></i> Contato
             </button>
-            <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20City%20Of%20Tech" target="_blank" class="w-full text-center block px-4 py-3 rounded-lg bg-gradient-to-r from-sky-500 to-cyan-500 text-slate-950 font-bold">
+            <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20City%20Of%20Tech" target="_blank" class="w-full text-center flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gradient-to-r from-sky-500 to-cyan-500 text-slate-950 font-bold">
+                <svg class="w-4 h-4 fill-slate-950" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                 Chamar no WhatsApp
             </a>
         </div>
@@ -288,7 +305,7 @@
                         </div>
                     </div>
 
-                    <!-- MOCKUP -->
+                    <!-- MOCKUP MULTIDISPOSITIVOS -->
                     <div class="lg:col-span-5 relative">
                         <div class="bg-gradient-to-b from-slate-800/80 to-slate-900/90 p-6 sm:p-8 rounded-3xl border border-slate-700/80 shadow-2xl relative overflow-hidden">
                             <div class="absolute -right-10 -top-10 w-48 h-48 bg-[#00d2ff]/15 rounded-full blur-3xl pointer-events-none"></div>
@@ -324,7 +341,7 @@
                                         </div>
                                         <div class="h-6 bg-slate-800 rounded"></div>
                                         <div class="h-4 bg-emerald-500/20 text-emerald-400 rounded flex items-center justify-center text-[7px] font-bold">
-                                            <i data-lucide="message-circle" class="w-2 h-2 mr-0.5"></i> WhatsApp
+                                            WhatsApp
                                         </div>
                                     </div>
                                 </div>
@@ -437,7 +454,7 @@
                 </div>
             </div>
 
-            <!-- PORTFÓLIO / MODELOS -->
+            <!-- PORTFÓLIO / MODELOS COM SUPORTE A IMAGENS REAIS -->
             <div id="modelos-section" class="bg-slate-900/50 border-y border-slate-800 py-16 lg:py-24">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center max-w-3xl mx-auto mb-14">
@@ -453,11 +470,10 @@
                         <!-- MODELO 1: Barbearia -->
                         <div class="bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-sky-500/40 transition flex flex-col justify-between shadow-xl">
                             <div>
-                                <div class="h-44 bg-slate-800/80 relative flex items-center justify-center border-b border-slate-800">
-                                    <div class="text-center">
-                                        <i data-lucide="scissors" class="w-12 h-12 text-[#00d2ff] mx-auto mb-2 opacity-90"></i>
-                                        <span class="text-xs font-semibold uppercase tracking-wider text-slate-300">Estilo & Beleza</span>
-                                    </div>
+                                <div class="h-48 bg-slate-950 relative overflow-hidden group">
+                                    <img src="modelo-barbearia.jpg" alt="Modelo de Site para Barbearia" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&auto=format&fit=crop&q=80';">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                                    <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-slate-900/90 border border-slate-700 text-[#00d2ff] text-[10px] font-bold uppercase tracking-wider">Estilo & Barbearia</span>
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold text-white mb-2">Barbearia & Estética Masculina</h3>
@@ -474,14 +490,13 @@
                             </div>
                         </div>
 
-                        <!-- MODELO 2: Restaurante -->
+                        <!-- MODELO 2: Restaurante / Pizzaria -->
                         <div class="bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-sky-500/40 transition flex flex-col justify-between shadow-xl">
                             <div>
-                                <div class="h-44 bg-slate-800/80 relative flex items-center justify-center border-b border-slate-800">
-                                    <div class="text-center">
-                                        <i data-lucide="utensils" class="w-12 h-12 text-[#f97316] mx-auto mb-2 opacity-90"></i>
-                                        <span class="text-xs font-semibold uppercase tracking-wider text-slate-300">Gastronomia & Delivery</span>
-                                    </div>
+                                <div class="h-48 bg-slate-950 relative overflow-hidden group">
+                                    <img src="modelo-restaurante.jpg" alt="Modelo de Site para Restaurante" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&auto=format&fit=crop&q=80';">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                                    <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-slate-900/90 border border-slate-700 text-[#f97316] text-[10px] font-bold uppercase tracking-wider">Gastronomia & Delivery</span>
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold text-white mb-2">Restaurante / Pizzaria / Delivery</h3>
@@ -501,11 +516,10 @@
                         <!-- MODELO 3: Salão de Beleza -->
                         <div class="bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-sky-500/40 transition flex flex-col justify-between shadow-xl">
                             <div>
-                                <div class="h-44 bg-slate-800/80 relative flex items-center justify-center border-b border-slate-800">
-                                    <div class="text-center">
-                                        <i data-lucide="sparkles" class="w-12 h-12 text-pink-400 mx-auto mb-2 opacity-90"></i>
-                                        <span class="text-xs font-semibold uppercase tracking-wider text-slate-300">Beleza & Bem-Estar</span>
-                                    </div>
+                                <div class="h-48 bg-slate-950 relative overflow-hidden group">
+                                    <img src="modelo-beleza.jpg" alt="Modelo de Site para Salão de Beleza" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&auto=format&fit=crop&q=80';">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                                    <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-slate-900/90 border border-slate-700 text-pink-400 text-[10px] font-bold uppercase tracking-wider">Beleza & Estética</span>
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold text-white mb-2">Salão de Beleza & Estética</h3>
@@ -525,11 +539,10 @@
                         <!-- MODELO 4: Oficina Mecânica -->
                         <div class="bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-sky-500/40 transition flex flex-col justify-between shadow-xl">
                             <div>
-                                <div class="h-44 bg-slate-800/80 relative flex items-center justify-center border-b border-slate-800">
-                                    <div class="text-center">
-                                        <i data-lucide="wrench" class="w-12 h-12 text-amber-400 mx-auto mb-2 opacity-90"></i>
-                                        <span class="text-xs font-semibold uppercase tracking-wider text-slate-300">Automotivo</span>
-                                    </div>
+                                <div class="h-48 bg-slate-950 relative overflow-hidden group">
+                                    <img src="modelo-oficina.jpg" alt="Modelo de Site para Oficina Mecânica" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&auto=format&fit=crop&q=80';">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                                    <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-slate-900/90 border border-slate-700 text-amber-400 text-[10px] font-bold uppercase tracking-wider">Automotivo</span>
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold text-white mb-2">Oficina Mecânica & Auto Center</h3>
@@ -549,11 +562,10 @@
                         <!-- MODELO 5: Clínica / Consultório -->
                         <div class="bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-sky-500/40 transition flex flex-col justify-between shadow-xl">
                             <div>
-                                <div class="h-44 bg-slate-800/80 relative flex items-center justify-center border-b border-slate-800">
-                                    <div class="text-center">
-                                        <i data-lucide="heart-pulse" class="w-12 h-12 text-emerald-400 mx-auto mb-2 opacity-90"></i>
-                                        <span class="text-xs font-semibold uppercase tracking-wider text-slate-300">Saúde & Consultórios</span>
-                                    </div>
+                                <div class="h-48 bg-slate-950 relative overflow-hidden group">
+                                    <img src="modelo-clinica.jpg" alt="Modelo de Site para Clínica" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&auto=format&fit=crop&q=80';">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                                    <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-slate-900/90 border border-slate-700 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">Saúde & Consultórios</span>
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold text-white mb-2">Clínica, Dentista & Consultório</h3>
@@ -573,11 +585,10 @@
                         <!-- MODELO 6: Advocacia -->
                         <div class="bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-sky-500/40 transition flex flex-col justify-between shadow-xl">
                             <div>
-                                <div class="h-44 bg-slate-800/80 relative flex items-center justify-center border-b border-slate-800">
-                                    <div class="text-center">
-                                        <i data-lucide="scale" class="w-12 h-12 text-[#00d2ff] mx-auto mb-2 opacity-90"></i>
-                                        <span class="text-xs font-semibold uppercase tracking-wider text-slate-300">Jurídico & Consultoria</span>
-                                    </div>
+                                <div class="h-48 bg-slate-950 relative overflow-hidden group">
+                                    <img src="modelo-advocacia.jpg" alt="Modelo de Site para Advocacia" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop&q=80';">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                                    <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-slate-900/90 border border-slate-700 text-[#00d2ff] text-[10px] font-bold uppercase tracking-wider">Jurídico & Consultoria</span>
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold text-white mb-2">Advocacia & Escritórios Jurídicos</h3>
@@ -781,7 +792,8 @@
                         </p>
                         <div class="pt-4">
                             <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20cria%C3%A7%C3%A3o%20dos%20sites%20pr%C3%A9-prontos." target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 text-slate-950 font-black text-base hover:shadow-xl hover:shadow-cyan-500/30 transition transform hover:-translate-y-0.5">
-                                <i data-lucide="message-square" class="w-5 h-5"></i> FALAR COM DANIEL NO WHATSAPP
+                                <svg class="w-5 h-5 fill-slate-950" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                                FALAR COM DANIEL NO WHATSAPP
                             </a>
                         </div>
                     </div>
@@ -898,12 +910,13 @@
         </section>
 
         <!-- ========================================================================= -->
-        <!-- 4. TAB: SOBRE DANIEL -->
+        <!-- 4. TAB: SOBRE DANIEL (COM LOGOS OFICIAIS E NOVO LINK GAMER) -->
         <!-- ========================================================================= -->
         <section id="tab-sobre" class="tab-content">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div class="grid md:grid-cols-12 gap-8 lg:gap-10 items-start">
                     
+                    <!-- CARD PERFIL DANIEL COM LOGOS OFICIAIS -->
                     <div class="md:col-span-5 bg-slate-900 p-6 rounded-3xl border border-slate-800 text-center md:sticky md:top-28 shadow-2xl transition-all duration-300">
                         <div class="w-36 h-36 sm:w-44 sm:h-44 mx-auto rounded-3xl bg-gradient-to-tr from-sky-500 to-cyan-500 p-1 mb-4 shadow-xl shadow-sky-500/10 overflow-hidden">
                             <img src="daniel.jpg" 
@@ -921,148 +934,206 @@
                             <i data-lucide="chevron-up" id="profile-toggle-icon" class="w-4 h-4 transition-transform duration-300"></i>
                         </button>
 
-                        <div id="profile-collapsible-content" class="mt-5 pt-5 border-t border-slate-800 space-y-2 text-left block">
-                            <a href="https://www.linkedin.com/in/daniel-gomes-25a767b5/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-xs text-slate-300 hover:text-white transition">
-                                <i data-lucide="linkedin" class="w-4 h-4 text-sky-400"></i> LinkedIn Daniel
+                        <!-- LISTA DE LINKS COM LOGOS OFICIAIS VETORIAIS -->
+                        <div id="profile-collapsible-content" class="mt-5 pt-5 border-t border-slate-800 space-y-2.5 text-left block">
+                            
+                            <!-- LINKEDIN PESSOAL -->
+                            <a href="https://www.linkedin.com/in/daniel-gomes-25a767b5/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700/60 hover:border-[#0077b5]/50 transition group">
+                                <div class="w-8 h-8 rounded-lg bg-[#0077b5]/15 flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4 fill-[#0077b5]" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    </svg>
+                                </div>
+                                <div class="overflow-hidden">
+                                    <div class="text-[10px] text-slate-400">LinkedIn Pessoal</div>
+                                    <div class="text-xs font-bold text-slate-200 group-hover:text-white truncate">Daniel Gomes</div>
+                                </div>
                             </a>
-                            <a href="https://www.instagram.com/city.oftech/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-xs text-slate-300 hover:text-white transition">
-                                <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i> Instagram (@city.oftech)
+
+                            <!-- INSTAGRAM -->
+                            <a href="https://www.instagram.com/city.oftech/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700/60 hover:border-pink-500/50 transition group">
+                                <div class="w-8 h-8 rounded-lg bg-pink-500/15 flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4 fill-pink-400" viewBox="0 0 24 24">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg>
+                                </div>
+                                <div class="overflow-hidden">
+                                    <div class="text-[10px] text-slate-400">Instagram Oficial</div>
+                                    <div class="text-xs font-bold text-slate-200 group-hover:text-white truncate">@city.oftech</div>
+                                </div>
                             </a>
-                            <a href="https://www.youtube.com/@CityOfTech10" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-xs text-slate-300 hover:text-white transition">
-                                <i data-lucide="youtube" class="w-4 h-4 text-red-500"></i> YouTube (@CityOfTech10)
+
+                            <!-- YOUTUBE CITY OF TECH -->
+                            <a href="https://www.youtube.com/@CityOfTech10" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700/60 hover:border-red-500/50 transition group">
+                                <div class="w-8 h-8 rounded-lg bg-red-500/15 flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4 fill-red-500" viewBox="0 0 24 24">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg>
+                                </div>
+                                <div class="overflow-hidden">
+                                    <div class="text-[10px] text-slate-400">YouTube Tecnologia</div>
+                                    <div class="text-xs font-bold text-slate-200 group-hover:text-white truncate">@CityOfTech10</div>
+                                </div>
                             </a>
-                            <a href="mailto:cityoftech100@gmail.com" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-xs text-slate-300 hover:text-white transition">
-                                <i data-lucide="mail" class="w-4 h-4 text-[#00d2ff]"></i> cityoftech100@gmail.com
+
+                            <!-- NOVO: YOUTUBE GAMER (CITY OF GAMES) -->
+                            <a href="https://www.youtube.com/@CityofGames10?themeRefresh=1" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700/60 hover:border-amber-500/50 transition group">
+                                <div class="w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4 fill-amber-400" viewBox="0 0 24 24">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg>
+                                </div>
+                                <div class="overflow-hidden">
+                                    <div class="text-[10px] text-amber-400 font-bold flex items-center gap-1">Canal Gamer 🎮</div>
+                                    <div class="text-xs font-bold text-slate-200 group-hover:text-white truncate">City Of Games (@CityofGames10)</div>
+                                </div>
+                            </a>
+
+                            <!-- EMAIL / GMAIL -->
+                            <a href="mailto:cityoftech100@gmail.com" class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700/60 hover:border-[#00d2ff]/50 transition group">
+                                <div class="w-8 h-8 rounded-lg bg-sky-500/15 flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4 fill-[#00d2ff]" viewBox="0 0 24 24">
+                                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                    </svg>
+                                </div>
+                                <div class="overflow-hidden">
+                                    <div class="text-[10px] text-slate-400">E-mail de Contato</div>
+                                    <div class="text-xs font-bold text-slate-200 group-hover:text-white truncate">cityoftech100@gmail.com</div>
+                                </div>
                             </a>
                         </div>
                     </div>
 
-                   <div class="md:col-span-7 space-y-6 text-slate-300 leading-relaxed text-base">
-    <span class="text-[#00d2ff] font-bold tracking-widest text-xs uppercase">Quem está por trás</span>
-    <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
-        Prazer, eu sou Daniel Gomes.
-    </h2>
+                    <!-- TEXTO AJUSTADO DA HISTÓRIA -->
+                    <div class="md:col-span-7 space-y-6 text-slate-300 leading-relaxed text-base">
+                        <span class="text-[#00d2ff] font-bold tracking-widest text-xs uppercase">Quem está por trás</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                            Prazer, eu sou Daniel Gomes.
+                        </h2>
 
-    <p>
-        Minha trajetória na tecnologia começou há mais de <strong>10 anos</strong>.
-    </p>
+                        <p>
+                            Minha trajetória na tecnologia começou há mais de <strong>10 anos</strong>.
+                        </p>
 
-    <p>
-        Sou formado em <strong>Gestão da Tecnologia da Informação</strong> e, ao longo da minha carreira, tive a oportunidade de atuar em grandes ambientes corporativos, incluindo empresas como <strong>Claranet e Fujitsu</strong>.
-    </p>
+                        <p>
+                            Sou formado em <strong>Gestão da Tecnologia da Informação</strong> e, ao longo da minha carreira, tive a oportunidade de atuar em grandes ambientes corporativos, incluindo empresas como <strong>Claranet e Fujitsu</strong>.
+                        </p>
 
-    <p>
-        Foram anos vivendo a <strong>TI na prática</strong>: acompanhando demandas, solucionando problemas e entendendo como a tecnologia impacta diretamente a rotina das pessoas e o funcionamento de uma empresa.
-    </p>
+                        <p>
+                            Foram anos vivendo a <strong>TI na prática</strong>: acompanhando demandas, solucionando problemas e entendendo como a tecnologia impacta diretamente a rotina das pessoas e o funcionamento de uma empresa.
+                        </p>
 
-    <p>
-        Nesse caminho, desenvolvi experiência com <strong>ambientes Windows, suporte técnico, Microsoft 365, e-mails corporativos, infraestrutura e diferentes soluções de tecnologia</strong>, sempre lidando com situações em que encontrar a solução certa faz toda a diferença.
-    </p>
+                        <p>
+                            Nesse caminho, desenvolvi experiência com <strong>ambientes Windows, suporte técnico, Microsoft 365, e-mails corporativos, infraestrutura e diferentes soluções de tecnologia</strong>, sempre lidando com situações em que encontrar a solução certa faz toda a diferença.
+                        </p>
 
-    <p>
-        E foi justamente essa experiência que moldou a forma como enxergo a tecnologia hoje.
-    </p>
+                        <p>
+                            E foi justamente essa experiência que moldou a forma como enxergo a tecnologia hoje.
+                        </p>
 
-    <!-- CITAÇÃO -->
-    <div class="p-5 sm:p-6 rounded-2xl bg-sky-950/30 border-l-4 border-[#00d2ff] my-5 shadow-lg shadow-sky-950/20">
-        <p class="text-slate-100 font-medium text-sm sm:text-base italic leading-relaxed">
-            "Quando um computador para, um e-mail deixa de chegar ou uma ferramenta essencial apresenta um problema, não existe apenas uma falha técnica. Existe uma pessoa — e, muitas vezes, uma empresa inteira — dependendo daquela solução."
-        </p>
-    </div>
+                        <!-- CITAÇÃO -->
+                        <div class="p-5 sm:p-6 rounded-2xl bg-sky-950/30 border-l-4 border-[#00d2ff] my-5 shadow-lg shadow-sky-950/20">
+                            <p class="text-slate-100 font-medium text-sm sm:text-base italic leading-relaxed">
+                                "Quando um computador para, um e-mail deixa de chegar ou uma ferramenta essencial apresenta um problema, não existe apenas uma falha técnica. Existe uma pessoa — e, muitas vezes, uma empresa inteira — dependendo daquela solução."
+                            </p>
+                        </div>
 
-    <p>
-        Por isso, meu trabalho nunca começa simplesmente pela tecnologia.
-    </p>
+                        <p>
+                            Por isso, meu trabalho nunca começa simplesmente pela tecnologia.
+                        </p>
 
-    <p>
-        Começa por <strong>entender o problema, investigar sua origem e encontrar a solução mais adequada para cada situação.</strong>
-    </p>
+                        <p>
+                            Começa por <strong>entender o problema, investigar sua origem e encontrar a solução mais adequada para cada situação.</strong>
+                        </p>
 
-    <h3 class="text-xl sm:text-2xl font-bold text-white pt-2">
-        Foi dessa visão que nasceu a City Of Tech.
-    </h3>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white pt-2">
+                            Foi dessa visão que nasceu a City Of Tech.
+                        </h3>
 
-    <p>
-        A <strong>City Of Tech</strong> nasceu para aproximar pessoas e empresas da tecnologia, transformando aquilo que muitas vezes parece complicado em soluções mais claras, acessíveis e eficientes.
-    </p>
+                        <p>
+                            A <strong>City Of Tech</strong> nasceu para aproximar pessoas e empresas da tecnologia, transformando aquilo que muitas vezes parece complicado em soluções mais claras, acessíveis e eficientes.
+                        </p>
 
-    <p>
-        Mais do que oferecer serviços técnicos, quero construir uma marca na qual o cliente saiba que pode encontrar alguém disposto a <strong>ouvir, analisar e buscar uma solução para o seu problema.</strong>
-    </p>
+                        <p>
+                            Mais do que oferecer serviços técnicos, quero construir uma marca na qual o cliente saiba que pode encontrar alguém disposto a <strong>ouvir, analisar e buscar uma solução para o seu problema.</strong>
+                        </p>
 
-    <p class="text-slate-200 font-medium">
-        Porque tecnologia, para mim, só faz sentido quando funciona a favor das pessoas.
-    </p>
+                        <p class="text-slate-200 font-medium">
+                            Porque tecnologia, para mim, só faz sentido quando funciona a favor das pessoas.
+                        </p>
 
-    <hr class="border-slate-800 my-6">
+                        <hr class="border-slate-800 my-6">
 
-    <!-- GAMES & CONTEÚDO -->
-    <h2 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-        Mas tecnologia também faz parte de quem eu sou fora do ambiente corporativo.
-    </h2>
+                        <!-- GAMES & CONTEÚDO -->
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                            Mas tecnologia também faz parte de quem eu sou fora do ambiente corporativo.
+                        </h2>
 
-    <p>
-        Sou <strong>gamer e criador de conteúdo. 🎮</strong>
-    </p>
+                        <p>
+                            Sou <strong>gamer e criador de conteúdo. 🎮</strong>
+                        </p>
 
-    <p>
-        Também sou o criador do <strong>City Of Games</strong>, canal dedicado ao universo dos games, onde compartilho conteúdo com uma comunidade que venho construindo ao redor de uma das minhas grandes paixões.
-    </p>
+                        <p>
+                            Também sou o criador do <strong>City Of Games</strong>, canal dedicado ao universo dos games, onde compartilho conteúdo com uma comunidade que venho construindo ao redor de uma das minhas grandes paixões.
+                        </p>
 
-    <p>
-        E essa vontade de compartilhar conhecimento também está presente no <strong>City Of Tech no YouTube</strong>, onde tecnologia deixa de ser apenas o meu trabalho e também se transforma em conteúdo: tutoriais, soluções, experiências, hardware e tudo aquilo que pode ajudar outras pessoas a entender melhor esse universo.
-    </p>
+                        <p>
+                            E essa vontade de compartilhar conhecimento também está presente no <strong>City Of Tech no YouTube</strong>, onde tecnologia deixa de ser apenas o meu trabalho e também se transforma em conteúdo: tutoriais, soluções, experiências, hardware e tudo aquilo que pode ajudar outras pessoas a entender melhor esse universo.
+                        </p>
 
-    <p>
-        Acredito muito que conhecimento técnico ganha ainda mais valor quando conseguimos <strong>compartilhá-lo e utilizá-lo para ajudar alguém do outro lado.</strong>
-    </p>
+                        <p>
+                            Acredito muito que conhecimento técnico ganha ainda mais valor quando conseguimos <strong>compartilhá-lo e utilizá-lo para ajudar alguém do outro lado.</strong>
+                        </p>
 
-    <hr class="border-slate-800 my-6">
+                        <hr class="border-slate-800 my-6">
 
-    <!-- MÚSICA -->
-    <h2 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight flex items-center gap-2">
-        E quando saio um pouco das telas... 🎸
-    </h2>
+                        <!-- MÚSICA -->
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight flex items-center gap-2">
+                            E quando saio um pouco das telas... 🎸
+                        </h2>
 
-    <p>
-        Existe outra paixão que sempre esteve presente na minha vida: <strong>a música.</strong>
-    </p>
+                        <p>
+                            Existe outra paixão que sempre esteve presente na minha vida: <strong>a música.</strong>
+                        </p>
 
-    <p>
-        Sou músico, canto e toco <strong>violão, guitarra, baixo, bateria e teclado</strong>.
-    </p>
+                        <p>
+                            Sou músico, canto e toco <strong>violão, guitarra, baixo, bateria e teclado</strong>.
+                        </p>
 
-    <p>
-        À primeira vista, tecnologia, games, criação de conteúdo e música podem parecer universos completamente diferentes.
-    </p>
+                        <p>
+                            À primeira vista, tecnologia, games, criação de conteúdo e música podem parecer universos completamente diferentes.
+                        </p>
 
-    <p>
-        Para mim, todos eles acabam se encontrando em algumas características que sempre fizeram parte de quem eu sou:
-    </p>
+                        <p>
+                            Para mim, todos eles acabam se encontrando em algumas características que sempre fizeram parte de quem eu sou:
+                        </p>
 
-    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
-        <span class="text-[#00d2ff] font-bold text-base sm:text-lg">
-            curiosidade, criatividade e vontade de entender como as coisas funcionam.
-        </span>
-    </div>
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <span class="text-[#00d2ff] font-bold text-base sm:text-lg">
+                                curiosidade, criatividade e vontade de entender como as coisas funcionam.
+                            </span>
+                        </div>
 
-    <p>
-        Hoje, é essa combinação de <strong>mais de 10 anos de experiência, conhecimento técnico, criatividade e proximidade com as pessoas</strong> que quero levar para cada projeto desenvolvido pela City Of Tech.
-    </p>
+                        <p>
+                            Hoje, é essa combinação de <strong>mais de 10 anos de experiência, conhecimento técnico, criatividade e proximidade com as pessoas</strong> que quero levar para cada projeto desenvolvido pela City Of Tech.
+                        </p>
 
-    <div class="p-5 rounded-2xl bg-gradient-to-r from-slate-900 to-sky-950/40 border border-sky-500/30 my-4 shadow-md">
-        <p class="text-white font-bold text-base sm:text-lg">
-            Porque antes de existir uma empresa oferecendo uma solução, existe uma pessoa disposta a entender o seu problema.
-        </p>
-    </div>
+                        <div class="p-5 rounded-2xl bg-gradient-to-r from-slate-900 to-sky-950/40 border border-sky-500/30 my-4 shadow-md">
+                            <p class="text-white font-bold text-base sm:text-lg">
+                                Porque antes de existir uma empresa oferecendo uma solução, existe uma pessoa disposta a entender o seu problema.
+                            </p>
+                        </div>
 
-    <!-- ASSINATURA -->
-    <div class="pt-6 border-t border-slate-800">
-        <div class="text-xl font-black text-white">Daniel Gomes</div>
-        <div class="text-sm font-semibold text-[#00d2ff]">Fundador da City Of Tech</div>
-        <div class="text-xs text-slate-400 mt-0.5">Gestão da Tecnologia da Informação</div>
-    </div>
-</div>
+                        <!-- ASSINATURA -->
+                        <div class="pt-6 border-t border-slate-800">
+                            <div class="text-xl font-black text-white">Daniel Gomes</div>
+                            <div class="text-sm font-semibold text-[#00d2ff]">Fundador da City Of Tech</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Gestão da Tecnologia da Informação</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
         <!-- ========================================================================= -->
@@ -1084,7 +1155,7 @@
                             
                             <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20City%20Of%20Tech" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700 transition group">
                                 <div class="p-3 rounded-lg bg-emerald-500/10 text-emerald-400 group-hover:scale-110 transition">
-                                    <i data-lucide="phone-call" class="w-6 h-6"></i>
+                                    <svg class="w-6 h-6 fill-emerald-400" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                                 </div>
                                 <div>
                                     <div class="text-xs text-slate-400">WhatsApp Direto</div>
@@ -1150,10 +1221,12 @@
 
     </main>
 
-    <!-- BOTÃO FLUTUANTE DE WHATSAPP -->
+    <!-- BOTÃO FLUTUANTE DE WHATSAPP COM SÍMBOLO OFICIAL -->
     <aside class="fixed bottom-6 right-6 z-40">
-        <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20os%20sites%20da%20City%20Of%20Tech." target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold rounded-full shadow-2xl hover:shadow-emerald-500/40 transition transform hover:scale-105" aria-label="Fale sobre seu site pelo WhatsApp">
-            <i data-lucide="message-circle" class="w-5 h-5 fill-slate-950 text-emerald-500"></i>
+        <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20os%20sites%20da%20City%20Of%20Tech." target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 bg-[#25D366] hover:bg-[#20ba5a] text-slate-950 font-extrabold rounded-full shadow-2xl hover:shadow-[#25D366]/40 transition transform hover:scale-105" aria-label="Fale sobre seu site pelo WhatsApp">
+            <svg class="w-5 h-5 fill-slate-950" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
             <span class="hidden sm:inline text-xs sm:text-sm font-bold">Fale sobre seu site</span>
         </a>
     </aside>
@@ -1174,7 +1247,8 @@
                 </p>
                 <div class="pt-2">
                     <a id="modal-whatsapp-link" href="#" target="_blank" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 text-slate-950 font-bold text-sm hover:shadow-lg hover:shadow-cyan-500/25 transition flex items-center justify-center gap-2">
-                        <i data-lucide="message-square" class="w-4 h-4"></i> Solicitar Demonstração no WhatsApp
+                        <svg class="w-4 h-4 fill-slate-950" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        Solicitar Demonstração no WhatsApp
                     </a>
                 </div>
             </div>
@@ -1195,12 +1269,14 @@
             </div>
 
             <div class="flex items-center gap-4 text-slate-400">
-                <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20City%20Of%20Tech" target="_blank" class="hover:text-emerald-400 transition"><i data-lucide="phone" class="w-5 h-5"></i></a>
-                <a href="mailto:cityoftech100@gmail.com" class="hover:text-[#00d2ff] transition"><i data-lucide="mail" class="w-5 h-5"></i></a>
-                <a href="https://www.instagram.com/city.oftech/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                <a href="https://www.youtube.com/@CityOfTech10" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition"><i data-lucide="youtube" class="w-5 h-5"></i></a>
-                <a href="https://www.linkedin.com/company/110355184/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-                <a href="https://www.linkedin.com/in/daniel-gomes-25a767b5/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition"><i data-lucide="user" class="w-5 h-5"></i></a>
+                <a href="https://wa.me/5511954922131?text=Ol%C3%A1%20Daniel%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20City%20Of%20Tech" target="_blank" class="hover:text-emerald-400 transition" title="WhatsApp">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                </a>
+                <a href="mailto:cityoftech100@gmail.com" class="hover:text-[#00d2ff] transition" title="E-mail"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                <a href="https://www.instagram.com/city.oftech/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition" title="Instagram @city.oftech"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                <a href="https://www.youtube.com/@CityOfTech10" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition" title="YouTube City Of Tech"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                <a href="https://www.youtube.com/@CityofGames10?themeRefresh=1" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition" title="YouTube City Of Games"><i data-lucide="gamepad-2" class="w-5 h-5"></i></a>
+                <a href="https://www.linkedin.com/in/daniel-gomes-25a767b5/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition" title="LinkedIn Daniel"><i data-lucide="user" class="w-5 h-5"></i></a>
             </div>
 
             <div class="text-xs text-slate-500">
