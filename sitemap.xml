@@ -8,22 +8,22 @@
        <priority>1.0000</priority>
   </url>
   <url>
-       <loc>https://cityoftech.com.br/sites.html</loc>
+       <loc>https://cityoftech.com.br/sites/</loc>
        <lastmod>2026-09-09T05:51:10+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://cityoftech.com.br/servicos.html</loc>
+       <loc>https://cityoftech.com.br/servicos/</loc>
        <lastmod>2026-09-09T05:51:10+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://cityoftech.com.br/sobre.html</loc>
+       <loc>https://cityoftech.com.br/sobre/</loc>
        <lastmod>2026-09-09T05:51:10+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://cityoftech.com.br/contato.html</loc>
+       <loc>https://cityoftech.com.br/contato/</loc>
        <lastmod>2026-09-09T05:51:10+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
