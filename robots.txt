@@ -1,4 +1,4 @@
-User-agent 
-Allow 
+User-agent: *
+Allow: /
 
-Sitemap httpscityoftech.com.br
+Sitemap: https://cityoftech.com.br/sitemap.xml
